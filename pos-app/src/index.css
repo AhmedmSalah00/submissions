@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer components {
+  /* Neumorphic Button */
+  .btn-neumorphic {
+    @apply px-6 py-3 rounded-2xl font-medium transition-all duration-200;
+    @apply bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-700 dark:to-slate-800;
+    @apply shadow-neumorphic-light dark:shadow-neumorphic-dark;
+    @apply hover:shadow-lg active:shadow-neumorphic-inset-light dark:active:shadow-neumorphic-inset-dark;
+    @apply transform hover:scale-105 active:scale-95;
+  }
+
+  /* Glass Card */
+  .card-glass {
+    @apply rounded-3xl backdrop-blur-md border border-white/20 dark:border-slate-700/50;
+    @apply bg-white/70 dark:bg-slate-800/70;
+    @apply shadow-glass-light dark:shadow-glass-dark;
+  }
+
+  /* Neumorphic Card */
+  .card-neumorphic {
+    @apply rounded-3xl p-6;
+    @apply bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-800 dark:to-slate-900;
+    @apply shadow-neumorphic-light dark:shadow-neumorphic-dark;
+  }
+
+  /* Neumorphic Input */
+  .input-neumorphic {
+    @apply px-4 py-3 rounded-xl w-full;
+    @apply bg-gray-50 dark:bg-slate-800;
+    @apply shadow-neumorphic-inset-light dark:shadow-neumorphic-inset-dark;
+    @apply border-none outline-none;
+    @apply text-gray-800 dark:text-gray-200;
+    @apply placeholder:text-gray-400 dark:placeholder:text-gray-500;
+    @apply transition-all duration-200;
+  }
+
+  /* Neumorphic Select */
+  .select-neumorphic {
+    @apply px-4 py-3 rounded-xl w-full;
+    @apply bg-gray-50 dark:bg-slate-800;
+    @apply shadow-neumorphic-inset-light dark:shadow-neumorphic-inset-dark;
+    @apply border-none outline-none;
+    @apply text-gray-800 dark:text-gray-200;
+    @apply transition-all duration-200;
+  }
+
+  /* Glass Button */
+  .btn-glass {
+    @apply px-6 py-3 rounded-2xl font-medium;
+    @apply backdrop-blur-md border border-white/20 dark:border-slate-700/50;
+    @apply bg-white/30 dark:bg-slate-800/30;
+    @apply hover:bg-white/50 dark:hover:bg-slate-700/50;
+    @apply transition-all duration-200;
+    @apply transform hover:scale-105 active:scale-95;
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    @apply btn-neumorphic;
+    @apply bg-gradient-to-br from-primary-400 to-primary-600;
+    @apply text-white;
+    @apply hover:from-primary-500 hover:to-primary-700;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply btn-neumorphic;
+    @apply bg-gradient-to-br from-gray-300 to-gray-400 dark:from-slate-600 dark:to-slate-700;
+    @apply text-gray-800 dark:text-gray-200;
+  }
+
+  /* Danger Button */
+  .btn-danger {
+    @apply btn-neumorphic;
+    @apply bg-gradient-to-br from-red-400 to-red-600;
+    @apply text-white;
+    @apply hover:from-red-500 hover:to-red-700;
+  }
+
+  /* Success Button */
+  .btn-success {
+    @apply btn-neumorphic;
+    @apply bg-gradient-to-br from-green-400 to-green-600;
+    @apply text-white;
+    @apply hover:from-green-500 hover:to-green-700;
+  }
+
+  /* Table Styles */
+  .table-neumorphic {
+    @apply w-full rounded-2xl overflow-hidden;
+    @apply shadow-neumorphic-light dark:shadow-neumorphic-dark;
+  }
+
+  .table-neumorphic thead {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600;
+    @apply text-white;
+  }
+
+  .table-neumorphic th {
+    @apply px-6 py-4 text-left font-semibold;
+  }
+
+  .table-neumorphic td {
+    @apply px-6 py-4;
+    @apply bg-white dark:bg-slate-800;
+    @apply border-b border-gray-200 dark:border-slate-700;
+  }
+
+  .table-neumorphic tbody tr:hover {
+    @apply bg-gray-50 dark:bg-slate-700/50;
+  }
+
+  /* Modal Backdrop */
+  .modal-backdrop {
+    @apply fixed inset-0 bg-black/50 backdrop-blur-sm z-40;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    @apply card-glass p-8 z-50 max-w-2xl w-full max-h-[90vh] overflow-y-auto;
+  }
+
+  /* Scrollbar Styles */
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-slate-800 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-slate-600 rounded-full;
+    @apply hover:bg-gray-400 dark:hover:bg-slate-500;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
